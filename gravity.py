@@ -46,11 +46,12 @@ ryavg = sum([i[0] for i in ry]) / len(ry)
 xavg = (bxavg + rxavg) / 2
 yavg = (byavg + ryavg) / 2
 
+# Set initial velocity (this causes them to orbit each other, set all to 0 for a linear collision)
 for i in range(point_num):
-    bx[i][1] = (rxavg - bx[i][0])
-    by[i][1] = (ryavg - by[i][0])
-    rx[i][1] = (bxavg - rx[i][0])
-    ry[i][1] = (byavg - ry[i][0])
+    bx[i][1] = -2000
+    by[i][1] =  2000
+    rx[i][1] =  2000
+    ry[i][1] = -2000
 
 plt.xlim(-2000, 2000)
 plt.ylim(-2000, 2000)
