@@ -104,9 +104,9 @@ def update(iteration):
         ry[i][1] = ry[i][1]/(1 + energy_loss) + (byavg - ry[i][0])
 
     # Auto scaling
-    # bound = max([abs(i[0]) for i in by] + [abs(i[0]) for i in ry] + [abs(i[0]) for i in bx] + [abs(i[0]) for i in rx])
-    # ax.set_xlim(-1 * bound, bound)
-    # ax.set_ylim(-1 * bound, bound)
+    # bound = max([yavg + abs(i[0]) for i in by] + [yavg + abs(i[0]) for i in ry] + [xavg + abs(i[0]) for i in bx] + [xavg + abs(i[0]) for i in rx])
+    # ax.set_xlim(-1 * bound + xavg, bound + xavg)
+    # ax.set_ylim(-1 * bound + yavg, bound + yavg)
     return plot
 
 anim = FuncAnimation(fig, update, init_func=init, interval=1, blit=False)
